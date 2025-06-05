@@ -10,6 +10,17 @@
     },
     "xcraft-core-server": {
       "modules": ["goblin-miner"]
+    },
+    "goblin-miner": {
+      "agent": {
+        "provider": "open-ai",
+        "model": "anthropic/claude-sonnet-4",
+        "host": "https://openrouter.ai/api/v1"
+      },
+      "inference": {
+        "temperature": 0.2,
+        "seed": 21121871
+      }
     }
   }
 }
