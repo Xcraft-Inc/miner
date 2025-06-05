@@ -9,7 +9,7 @@
       "mainQuest": "appMiner.init"
     },
     "xcraft-core-server": {
-      "modules": ["goblin-miner", "goblin-warehouse"]
+      "modules": ["goblin-miner"]
     }
   }
 }
