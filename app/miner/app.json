@@ -22,15 +22,18 @@
         },
         "authKey": {
           "alias": "k",
-          "describe": "Authentification key"
+          "describe": "Authentification key",
+          "type": "string"
         },
         "input": {
           "alias": "i",
-          "describe": "Input directory to analyze (must be absolute)"
+          "describe": "Input directory to analyze (must be absolute)",
+          "type": "string"
         },
         "output": {
           "alias": "o",
-          "describe": "Output file (must be absolute, the file name must follows the instruction name)"
+          "describe": "Output file (must be absolute, the file name must follows the instruction name)",
+          "type": "string"
         }
       }
     },
