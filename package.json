@@ -10,12 +10,14 @@
     "chai": "^5.2.0",
     "cytoscape-cose-bilkent": "^4.1.0",
     "cytoscape-dagre": "^2.3.2",
+    "goblin-builder": "^3.8.1",
     "mocha": "^11.2.2",
     "prettier": "2.0.4",
     "react-cytoscapejs": "^1.2.1",
     "xcraft-dev-prettier": "^2.0.0",
     "xcraft-dev-rules": "^4.2.4",
-    "xcraft-dev-sqlite": "^1.0.0"
+    "xcraft-dev-sqlite": "^1.0.0",
+    "xcraft-zog": "^3.1.4"
   },
   "prettier": "xcraft-dev-prettier",
   "workspaces": [
@@ -23,7 +25,9 @@
   ],
   "scripts": {
     "start": "cross-env NODE_ENV=development XCRAFT_LOG=2 node .",
+    "builder": "cross-env NODE_ENV=production NODE_OPTIONS=--max-old-space-size=4096 node . --log=2 --app=builder",
     "test": "node -e \"require('child_process').spawnSync('mocha', ['--inspect', '-c', 'lib/' + JSON.parse(process.env.npm_config_argv).remain[0] + '/test'], {shell: true, stdio: 'inherit'})\" #",
+    "release": "cross-env-shell GOBLINS_APP=builder \"./node_modules/.bin/zog nodify.build $npm_config_appid ../build/$npm_config_appid\"",
     "postinstall": "xcraft-complete-dev-deps . && xcraft-dev-sqlite ."
   },
   "author": "Mathieu Schroeter",
