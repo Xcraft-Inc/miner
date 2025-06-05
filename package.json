@@ -7,6 +7,12 @@
     "cross-env": "^5.0.1"
   },
   "devDependencies": {
+    "chai": "^5.2.0",
+    "cytoscape-cose-bilkent": "^4.1.0",
+    "cytoscape-dagre": "^2.3.2",
+    "mocha": "^11.2.2",
+    "prettier": "2.0.4",
+    "react-cytoscapejs": "^1.2.1",
     "xcraft-dev-prettier": "^2.0.0",
     "xcraft-dev-rules": "^4.2.4",
     "xcraft-dev-sqlite": "^1.0.0"

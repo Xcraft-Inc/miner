@@ -1,0 +1,3 @@
+[submodule "lib/goblin-miner"]
+	path = lib/goblin-miner
+	url = ../goblin-miner
