@@ -1,0 +1,29 @@
+{
+  "name": "miner",
+  "version": "0.1.0",
+  "description": "",
+  "main": "node_modules/xcraft-core-host/bin/host",
+  "dependencies": {
+    "cross-env": "^5.0.1"
+  },
+  "devDependencies": {
+    "xcraft-dev-prettier": "^2.0.0",
+    "xcraft-dev-rules": "^4.2.4",
+    "xcraft-dev-sqlite": "^1.0.0"
+  },
+  "prettier": "xcraft-dev-prettier",
+  "workspaces": [
+    "lib/*"
+  ],
+  "scripts": {
+    "start": "cross-env NODE_ENV=development node .",
+    "test": "node -e \"require('child_process').spawnSync('mocha', ['--inspect', '-c', 'lib/' + JSON.parse(process.env.npm_config_argv).remain[0] + '/test'], {shell: true, stdio: 'inherit'})\" #",
+    "postinstall": "xcraft-complete-dev-deps . && xcraft-dev-sqlite ."
+  },
+  "author": "Mathieu Schroeter",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18",
+    "npm": ">=9"
+  }
+}

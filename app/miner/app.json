@@ -1,0 +1,12 @@
+{
+  "name": "miner",
+  "versionFrom": "goblin-miner",
+  "description": "Miner",
+  "appCompany": "epsitec",
+  "appId": "miner",
+  "xcraft": {
+    "xcraft-core-server": {
+      "modules": ["goblin-miner", "goblin-warehouse"]
+    }
+  }
+}
