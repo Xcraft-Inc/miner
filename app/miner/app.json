@@ -1,7 +1,7 @@
 {
-  "name": "miner",
+  "name": "xcraft-miner",
   "versionFrom": "goblin-miner",
-  "description": "Miner",
+  "description": "Xcraft Miner",
   "appCompany": "epsitec",
   "appId": "miner",
   "xcraft": {
