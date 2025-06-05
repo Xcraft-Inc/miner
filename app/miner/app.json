@@ -19,7 +19,8 @@
           "alias": "t",
           "describe": "Type of input directory (project)",
           "choices": ["xcraft", "dotnet"],
-          "type": "string"
+          "type": "string",
+          "default": "xcraft"
         },
         "authKey": {
           "alias": "k",
@@ -40,6 +41,9 @@
     },
     "xcraft-core-server": {
       "modules": ["goblin-miner"]
+    },
+    "xcraft-core-transport": {
+      "backends": ["ee"]
     },
     "goblin-miner": {
       "agent": {
