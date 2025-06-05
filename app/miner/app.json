@@ -5,6 +5,9 @@
   "appCompany": "epsitec",
   "appId": "miner",
   "xcraft": {
+    "xcraft-core-host": {
+      "mainQuest": "appMiner.init"
+    },
     "xcraft-core-server": {
       "modules": ["goblin-miner", "goblin-warehouse"]
     }
