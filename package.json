@@ -22,7 +22,7 @@
     "lib/*"
   ],
   "scripts": {
-    "start": "cross-env NODE_ENV=development node .",
+    "start": "cross-env NODE_ENV=development XCRAFT_LOG=2 node .",
     "test": "node -e \"require('child_process').spawnSync('mocha', ['--inspect', '-c', 'lib/' + JSON.parse(process.env.npm_config_argv).remain[0] + '/test'], {shell: true, stdio: 'inherit'})\" #",
     "postinstall": "xcraft-complete-dev-deps . && xcraft-dev-sqlite ."
   },
