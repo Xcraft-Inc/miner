@@ -5,8 +5,34 @@
   "appCompany": "epsitec",
   "appId": "miner",
   "xcraft": {
+    "xcraft-core-cryo": {
+      "enableFTS": true
+    },
+    "xcraft-core-goblin": {
+      "enableCryo": true
+    },
     "xcraft-core-host": {
-      "mainQuest": "appMiner.init"
+      "mainQuest": "appMiner.init",
+      "appOptions": {
+        "type": {
+          "alias": "t",
+          "describe": "Type of input directory (project)",
+          "choices": ["xcraft", "dotnet"],
+          "type": "string"
+        },
+        "authKey": {
+          "alias": "k",
+          "describe": "Authentification key"
+        },
+        "input": {
+          "alias": "i",
+          "describe": "Input directory to analyze (must be absolute)"
+        },
+        "output": {
+          "alias": "o",
+          "describe": "Output file (must be absolute, the file name must follows the instruction name)"
+        }
+      }
     },
     "xcraft-core-server": {
       "modules": ["goblin-miner"]
