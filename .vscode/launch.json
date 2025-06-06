@@ -2,13 +2,6 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": ":: attach to window",
-      "port": 9222,
-      "request": "attach",
-      "type": "chrome",
-      "webRoot": "${workspaceRoot}/lib/"
-    },
-    {
       "type": "node",
       "request": "launch",
       "name": "Miner",
