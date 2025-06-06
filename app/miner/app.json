@@ -23,9 +23,28 @@
           "type": "string",
           "default": "xcraft"
         },
+        "provider": {
+          "alias": "p",
+          "describe": "AI provider",
+          "choices": ["open-ai", "ollama"],
+          "type": "string",
+          "default": "open-ai"
+        },
+        "model": {
+          "alias": "m",
+          "describe": "AI model",
+          "type": "string",
+          "default": "anthropic/claude-sonnet-4"
+        },
+        "host": {
+          "alias": "H",
+          "describe": "AI host",
+          "type": "string",
+          "default": "https://openrouter.ai/api/v1"
+        },
         "authKey": {
           "alias": "k",
-          "describe": "Authentification key",
+          "describe": "AI authentification key",
           "type": "string"
         },
         "input": {
