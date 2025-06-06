@@ -47,6 +47,18 @@
           "describe": "AI authentification key",
           "type": "string"
         },
+        "temperature": {
+          "alias": "T",
+          "describe": "AI temperature (advanced)",
+          "type": "number",
+          "default": 0.2
+        },
+        "seed": {
+          "alias": "s",
+          "describe": "AI seed (advanced)",
+          "type": "number",
+          "default": 21121871
+        },
         "input": {
           "alias": "i",
           "describe": "Input directory to analyze",
