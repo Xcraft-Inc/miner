@@ -12,7 +12,6 @@
       "type": "node",
       "request": "launch",
       "name": "Miner",
-      "presentation": {"group": "space-battle"},
       "program": "${workspaceRoot}/node_modules/xcraft-core-host/bin/host",
       "args": [
         "--log=2",
