@@ -14,7 +14,14 @@
       "name": "Miner",
       "presentation": {"group": "space-battle"},
       "program": "${workspaceRoot}/node_modules/xcraft-core-host/bin/host",
-      "args": ["--log=2", "--app=miner"],
+      "args": [
+        "--log=2",
+        "--app=miner",
+        "--type=xcraft",
+        "--input=${workspaceRoot}/lib/goblin-miner",
+        "--output=${workspaceRoot}/lib/goblin-miner/doc/appUse.md",
+        "--authKey=sk-or-v1-foobar"
+      ],
       "outputCapture": "std",
       "env": {
         "NODE_ENV": "development"
