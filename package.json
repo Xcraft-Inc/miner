@@ -27,7 +27,7 @@
     "start": "cross-env NODE_ENV=development XCRAFT_LOG=2 node .",
     "builder": "cross-env NODE_ENV=production NODE_OPTIONS=--max-old-space-size=4096 node . --log=2 --app=builder",
     "test": "node -e \"require('child_process').spawnSync('mocha', ['--inspect', '-c', 'lib/' + JSON.parse(process.env.npm_config_argv).remain[0] + '/test'], {shell: true, stdio: 'inherit'})\" #",
-    "release": "cross-env-shell GOBLINS_APP=builder \"./node_modules/.bin/zog nodify.build $npm_config_appid ../build/$npm_config_appid\" && cp lib/goblin-miner/doc/appUse.md ../build/$npm_config_appid/build/release/README.md",
+    "release": "cross-env-shell GOBLINS_APP=builder \"./node_modules/.bin/zog nodify.build $npm_config_appid ../build/$npm_config_appid\"",
     "postinstall": "xcraft-complete-dev-deps . && xcraft-dev-sqlite ."
   },
   "author": "Mathieu Schroeter",

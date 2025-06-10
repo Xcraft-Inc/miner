@@ -1,10 +1,13 @@
 {
   "name": "xcraft-miner",
   "version": "1.3.4",
-  "description": "",
+  "description": "Xcraft Miner",
   "dependencies": {
     "goblin-miner": "1.3.4"
   },
   "author": "Mathieu Schroeter",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "publish": "cp ../lib/goblin-miner/doc/appUse.md README.md"
+  }
 }
