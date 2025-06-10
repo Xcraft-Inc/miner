@@ -1,7 +1,5 @@
 [update-version]
 	package-json = package.json
 	package-lock = package-lock.json
-	package-json = npx/package.json
-	custom = update-version.json
 [sku]
 	principalModuleId = lib/goblin-miner
