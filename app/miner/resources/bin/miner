@@ -1,2 +1,20 @@
 #!/usr/bin/env node
+
+const fs = require('node:fs');
+const path = require('node:path');
+
+/* HACK: overwrite files deployed by NPX.
+ * It's because xHost cannot be launch when the projectPath is in node_modules.
+ * The usual way is that the projectPath is the root directory where
+ * node_modules is built. But in case of NPX, a temporary package.json
+ * file is put by NPX with the main project as dependency. Then the projectPath
+ * is in node_modules and it's juste wrong here.
+ */
+['goblins.json', 'config.js', 'package.json'].forEach((file) =>
+  fs.copyFileSync(
+    path.join(__dirname, '..', file),
+    path.join(__dirname, '../../..', file)
+  )
+);
+
 require('xcraft-core-host/bin/host');
