@@ -21,6 +21,17 @@
     },
     {
       "type": "node",
+      "request": "launch",
+      "name": "Builder",
+      "program": "${workspaceRoot}/node_modules/xcraft-core-host/bin/host",
+      "args": ["--log=2", "--app=builder"],
+      "outputCapture": "std",
+      "env": {
+        "NODE_ENV": "development"
+      }
+    },
+    {
+      "type": "node",
       "request": "attach",
       "name": ":: attach by process id",
       "processId": "${command:PickProcess}"
