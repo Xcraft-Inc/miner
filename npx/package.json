@@ -9,5 +9,8 @@
   "license": "MIT",
   "scripts": {
     "publish": "cp ../lib/goblin-miner/doc/appUse.md README.md"
+  },
+  "bin": {
+    "xcraft-miner": "bin/miner"
   }
 }
