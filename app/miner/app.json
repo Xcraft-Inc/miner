@@ -5,7 +5,9 @@
   "description": "Xcraft Miner",
   "appCompany": "epsitec",
   "appId": "miner",
-  "appBin": "node_modules/xcraft-core-host/bin/host",
+  "appBin": {
+    "xcraft-miner": "bin/miner"
+  },
   "xcraft": {
     "xcraft-core-cryo": {
       "enableFTS": true
