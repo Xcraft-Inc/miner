@@ -14,7 +14,7 @@ ou
 bunx xcraft-miner@latest
 ```
 
-L'application utilise l'intelligence artificielle pour générer automatiquement de la documentation technique à partir du code source de vos projets Xcraft et .NET.
+L'application utilise l'intelligence artificielle pour générer automatiquement de la documentation technique à partir du code source de vos projets Xcraft et .NET. Elle peut également effectuer des traductions de documents.
 
 ## Paramètres
 
@@ -22,9 +22,9 @@ L'application accepte plusieurs paramètres en ligne de commande :
 
 ### `-t, --type`
 
-Spécifie le type de projet à analyser.
+Spécifie le type de projet à analyser ou d'opération à effectuer.
 
-- **Valeurs supportées** : `xcraft`, `dotnet`
+- **Valeurs supportées** : `xcraft`, `dotnet`, `translate`
 - **Par défaut** : `xcraft`
 
 ### `-p, --provider`
@@ -71,17 +71,17 @@ Graine pour la génération déterministe.
 
 ### `-i, --input`
 
-Chemin vers le module ou dossier source à analyser.
+Chemin vers le module ou dossier source à analyser, ou fichier à traduire.
 
 - **Format** : Chemin absolu ou relatif
-- **Par défaut** : Utilise la configuration du module
+- **Usage** : Pour la documentation, spécifie le module à analyser. Pour la traduction, spécifie le fichier source à traduire.
 
 ### `-o, --output`
 
-Chemin vers le fichier de sortie pour la documentation générée.
+Nom du fichier de sortie pour la documentation générée.
 
-- **Format** : Chemin absolu vers le fichier de destination
-- **Par défaut** : Utilise la configuration du module
+- **Format** : Nom de fichier (ex: `README.md`, `API.md`)
+- **Usage** : Pour la documentation, définit le type de document à générer. Pour la traduction, définit le fichier de sortie.
 
 ## Configurations
 
@@ -107,7 +107,7 @@ votre-module/
 └── .mignore
 ```
 
-**Note importante** : Le type de projet (`xcraft`, `dotnet`) ne fait pas partie du chemin des dossiers dans le module cible. Les fichiers sont organisés directement par nom de document.
+**Note importante** : Le type de projet (`xcraft`, `dotnet`, `translate`) ne fait pas partie du chemin des dossiers dans le module cible. Les fichiers sont organisés directement par nom de document.
 
 #### Types de fichiers de configuration
 
@@ -166,6 +166,8 @@ L'application applique automatiquement des filtres selon le type de projet :
 - Les fichiers `.csproj`
 - Les fichiers `.sln`
 
+**Type `translate`** : Traite le fichier source spécifié sans filtrage particulier
+
 ## Exemples
 
 ### Génération basique pour un projet Xcraft
@@ -177,13 +179,19 @@ npx xcraft-miner@latest -k "votre-cle-api"
 ### Génération pour un module spécifique
 
 ```bash
-npx xcraft-miner@latest -t xcraft -k "votre-cle-api" -i "./lib/mon-module" -o "./doc/README.md"
+npx xcraft-miner@latest -t xcraft -k "votre-cle-api" -i "./lib/mon-module" -o "README.md"
 ```
 
 ### Génération pour un projet .NET
 
 ```bash
-npx xcraft-miner@latest -t dotnet -k "votre-cle-api" -i "/chemin/vers/projet" -o "/chemin/vers/documentation.md"
+npx xcraft-miner@latest -t dotnet -k "votre-cle-api" -i "/chemin/vers/projet" -o "README.md"
+```
+
+### Traduction d'un document
+
+```bash
+npx xcraft-miner@latest -t translate -k "votre-cle-api" -i "/chemin/vers/document.md" -o "document.en.md"
 ```
 
 ### Utilisation avec un fournisseur personnalisé
@@ -204,10 +212,10 @@ npx xcraft-miner@latest -p "ollama" -m "llama3.2" -H "http://localhost:11434/v1"
 npx xcraft-miner@latest -k "votre-cle-api" -T 0.7 -s 42 -i "./lib/mon-module"
 ```
 
-### Utilisation avec un chemin absolu
+### Génération de documentation API
 
 ```bash
-npx xcraft-miner@latest -k "sk-..." -i "/home/user/projets/mon-module" -o "/home/user/docs/README.md"
+npx xcraft-miner@latest -k "sk-..." -i "/home/user/projets/mon-module" -o "API.md"
 ```
 
-L'application analyse automatiquement les fichiers source du module spécifié, applique les filtres configurés selon le type de projet, et génère une documentation complète en utilisant l'intelligence artificielle selon les prompts et instructions définis.
+L'application analyse automatiquement les fichiers source du module spécifié, applique les filtres configurés selon le type de projet, et génère une documentation complète en utilisant l'intelligence artificielle selon les prompts et instructions définis. Pour la traduction, elle traite le fichier source et génère une version traduite avec le suffixe de langue approprié.
