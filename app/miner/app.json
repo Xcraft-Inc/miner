@@ -21,7 +21,7 @@
         "type": {
           "alias": "t",
           "describe": "Type of input directory (project)",
-          "choices": ["xcraft", "dotnet", "translate"],
+          "choices": ["xcraft", "cxx", "dotnet", "translate"],
           "type": "string",
           "default": "xcraft"
         },
