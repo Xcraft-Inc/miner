@@ -14,7 +14,7 @@ ou
 bunx xcraft-miner@latest
 ```
 
-L'application utilise l'intelligence artificielle pour générer automatiquement de la documentation technique à partir du code source de vos projets Xcraft et .NET. Elle peut également effectuer des traductions de documents.
+L'application utilise l'intelligence artificielle pour générer automatiquement de la documentation technique à partir du code source de vos projets. Elle supporte les projets Xcraft, .NET et C++, et peut également effectuer des traductions de documents.
 
 ## Paramètres
 
@@ -24,7 +24,7 @@ L'application accepte plusieurs paramètres en ligne de commande :
 
 Spécifie le type de projet à analyser ou d'opération à effectuer.
 
-- **Valeurs supportées** : `xcraft`, `dotnet`, `translate`
+- **Valeurs supportées** : `xcraft`, `dotnet`, `cxx`, `translate`
 - **Par défaut** : `xcraft`
 
 ### `-p, --provider`
@@ -107,7 +107,7 @@ votre-module/
 └── .mignore
 ```
 
-**Note importante** : Le type de projet (`xcraft`, `dotnet`, `translate`) ne fait pas partie du chemin des dossiers dans le module cible. Les fichiers sont organisés directement par nom de document.
+**Note importante** : Le type de projet (`xcraft`, `dotnet`, `cxx`, `translate`) ne fait pas partie du chemin des dossiers dans le module cible. Les fichiers sont organisés directement par nom de document.
 
 #### Types de fichiers de configuration
 
@@ -166,6 +166,14 @@ L'application applique automatiquement des filtres selon le type de projet :
 - Les fichiers `.csproj`
 - Les fichiers `.sln`
 
+**Type `cxx`** : Inclut uniquement
+
+- Les fichiers `Makefile`
+- Les fichiers `CMakeLists.txt`
+- Les fichiers `.c`, `.cxx`, `.cpp`
+- Les fichiers `.h`, `.hxx`
+- Les fichiers `.cxproj`, `.sln`
+
 **Type `translate`** : Traite le fichier source spécifié sans filtrage particulier
 
 ## Exemples
@@ -186,6 +194,12 @@ npx xcraft-miner@latest -t xcraft -k "votre-cle-api" -i "./lib/mon-module" -o "R
 
 ```bash
 npx xcraft-miner@latest -t dotnet -k "votre-cle-api" -i "/chemin/vers/projet" -o "README.md"
+```
+
+### Génération pour un projet C++
+
+```bash
+npx xcraft-miner@latest -t cxx -k "votre-cle-api" -i "/chemin/vers/projet" -o "README.md"
 ```
 
 ### Traduction d'un document
