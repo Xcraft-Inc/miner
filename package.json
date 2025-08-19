@@ -30,7 +30,11 @@
     "release": "cross-env-shell GOBLINS_APP=builder \"./node_modules/.bin/zog npxify.build $npm_config_appid ../build/$npm_config_appid\"",
     "postinstall": "xcraft-complete-dev-deps . && xcraft-dev-sqlite ."
   },
-  "author": "Mathieu Schroeter",
+  "author": "Epsitec SA",
+  "contributors": [
+    "Samuel Loup <loup@epsitec.ch>",
+    "Mathieu Schroeter <schroeter@epsitec.ch>"
+  ],
   "license": "MIT",
   "engines": {
     "node": ">=18",
