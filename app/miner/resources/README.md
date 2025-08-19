@@ -144,6 +144,7 @@ test/
 examples/
 internal/
 foobar.js
+!doc/myDoc.md
 
 # Exclusions pour API.md
 [API.md]
@@ -176,6 +177,8 @@ L'application applique automatiquement des filtres selon le type de projet :
 
 **Type `translate`** : Traite le fichier source spécifié sans filtrage particulier
 
+**Type `json`** : Inclut uniquement les fichiers `.json`
+
 ## Exemples
 
 ### Génération basique pour un projet Xcraft
@@ -202,10 +205,10 @@ npx xcraft-miner@latest -t dotnet -k "votre-cle-api" -i "/chemin/vers/projet" -o
 npx xcraft-miner@latest -t cxx -k "votre-cle-api" -i "/chemin/vers/projet" -o "README.md"
 ```
 
-### Traduction d'un document
+### Traduction d'un document en anglais
 
 ```bash
-npx xcraft-miner@latest -t translate -k "votre-cle-api" -i "/chemin/vers/document.md" -o "document.en.md"
+npx xcraft-miner@latest -t translate -k "votre-cle-api" -i "/chemin/vers/document.md" -o "README.md"
 ```
 
 ### Utilisation avec un fournisseur personnalisé
@@ -232,4 +235,4 @@ npx xcraft-miner@latest -k "votre-cle-api" -T 0.7 -s 42 -i "./lib/mon-module"
 npx xcraft-miner@latest -k "sk-..." -i "/home/user/projets/mon-module" -o "API.md"
 ```
 
-L'application analyse automatiquement les fichiers source du module spécifié, applique les filtres configurés selon le type de projet, et génère une documentation complète en utilisant l'intelligence artificielle selon les prompts et instructions définis. Pour la traduction, elle traite le fichier source et génère une version traduite avec le suffixe de langue approprié.
+L'application analyse automatiquement les fichiers source du module spécifié, applique les filtres configurés selon le type de projet, et génère une documentation complète en utilisant l'intelligence artificielle selon les prompts et instructions définis. Pour la traduction, elle traite le fichier source et génère une version traduite avec le suffixe de langue approprié (par exemple `.en.md` pour l'anglais).
